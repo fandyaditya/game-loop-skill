@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$PLUGIN_ROOT/hooks/session-start.mjs\"",
+            "command": "node -e \"process.exit(0)\"",
             "statusMessage": "Game loop: one slice, then assets, judge, rollback if it got worse"
           }
         ]

@@ -10,7 +10,7 @@
       "name": "game-loop",
       "source": "./",
       "description": "Slice, assets, playtest judge, and rollback. The part of a game studio worth keeping on an 8 GB machine.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "fandyaditya"
       },

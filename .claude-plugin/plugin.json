@@ -1,11 +1,17 @@
 {
   "name": "game-loop",
-  "description": "The light 80% of an AI game studio: one playable slice, generated assets, a playtest judge, and rollback.",
-  "version": "0.2.0",
+  "displayName": "Game loop",
+  "version": "0.2.1",
+  "description": "The light 80% of an AI game studio. One playable slice, generated assets, a playtest judge, and rollback. No desktop app.",
   "author": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
   },
+  "homepage": "https://github.com/fandyaditya/game-loop-skill",
+  "repository": "https://github.com/fandyaditya/game-loop-skill",
   "license": "MIT",
-  "keywords": ["game", "gamedev", "playtest", "assets", "godot", "threejs"]
+  "keywords": ["game", "gamedev", "assets", "playtest"],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "hooks": "./hooks/hooks.json"
 }
