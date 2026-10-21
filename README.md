@@ -1,10 +1,28 @@
 # game-loop
 
-A light game-dev skill for **Claude Code** and **Codex**.
+A Codex plugin, and the same skills for Claude Code.
 
-One playable change at a time, a real playtest before "done", and generated art and audio instead of placeholders. It is the useful part of a heavy AI game studio, without the desktop app, so it stays usable on an 8 GB machine.
+This is the part of a desktop AI game studio that is worth keeping, and not the Electron app that makes an 8 GB Mac struggle.
 
-The instructions are one `SKILL.md`. Claude loads it as a plugin. Codex loads the same file from `.agents/skills`.
+| Studio piece | Here |
+| --- | --- |
+| One playable change, then stop | `game-slice` |
+| Art, models, and audio instead of placeholders | `game-assets` |
+| Look at the running game before saying it works | `game-judge` |
+| Undo a slice that got worse, and only your own files | `game-rollback` |
+| Live preview app, agent swarms, local models | left out |
+
+Asset files still come from [Genex](https://genex.games/SKILL.md). This plugin tells the agent when to call it. It does not reimplement the generators.
+
+## Codex
+
+The plugin manifest is [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json). It points at `skills/` and a session hook, same shape as a Codex plugin, not a lone skill file.
+
+```
+codex plugin add fandyaditya/game-loop-skill
+```
+
+Then `$game-slice`, `$game-assets`, `$game-judge`, or `$game-rollback`.
 
 ## Claude Code
 
@@ -13,39 +31,15 @@ The instructions are one `SKILL.md`. Claude loads it as a plugin. Codex loads th
 /plugin install game-loop@game-loop
 ```
 
-Or, without the marketplace, copy [skills/game-loop](skills/game-loop) to `.claude/skills/game-loop` in the game project (or `~/.claude/skills/game-loop` for every project).
-
-## Codex
-
-Copy [skills/game-loop](skills/game-loop) into the game project:
+## Layout
 
 ```
-mkdir -p .agents/skills
-cp -R skills/game-loop .agents/skills/game-loop
+.codex-plugin/plugin.json    Codex plugin manifest
+.claude-plugin/              Claude marketplace + plugin manifest
+hooks/hooks.json             session reminder, no extra agent
+skills/game-slice/
+skills/game-assets/
+skills/game-judge/
+skills/game-rollback/
+skills/game-loop/            which of the four to run
 ```
-
-Use `~/.agents/skills/game-loop` if you want it in every project. Older Codex builds also read `.codex/skills`; the same folder works there.
-
-In a Codex session you can call it with `$game-loop`.
-
-This repo also keeps a copy at `.agents/skills/game-loop` so opening the repo itself in Codex discovers the skill. In a game project, copy the folder across. Do not point Codex at this repo and expect it to build your game here.
-
-## Both at once
-
-If you use the skills CLI:
-
-```
-npx skills add fandyaditya/game-loop-skill
-```
-
-## Assets
-
-This skill does not bundle a generator. When a slice needs models, textures, or audio, it tells the agent to use the Genex skill if you have already installed it:
-
-```
-set up https://genex.games/SKILL.md
-```
-
-## License
-
-MIT. See [LICENSE](LICENSE).

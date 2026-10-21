@@ -1,0 +1,30 @@
+{
+  "name": "game-loop",
+  "version": "0.2.0",
+  "description": "The light 80% of an AI game studio. One playable slice, generated assets, a playtest judge, and rollback. No desktop app.",
+  "author": {
+    "name": "fandyaditya",
+    "url": "https://github.com/fandyaditya"
+  },
+  "homepage": "https://github.com/fandyaditya/game-loop-skill",
+  "repository": "https://github.com/fandyaditya/game-loop-skill",
+  "license": "MIT",
+  "keywords": ["game", "gamedev", "assets", "playtest", "codex"],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Game loop",
+    "shortDescription": "Slice, assets, judge, rollback",
+    "longDescription": "Build a game one playable change at a time. Generate the art and audio the player will actually see, judge the running game, and roll back only your own files if the slice got worse. Leaves out the heavy studio app.",
+    "developerName": "fandyaditya",
+    "category": "Coding",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://github.com/fandyaditya/game-loop-skill",
+    "defaultPrompt": [
+      "Use $game-slice to add one playable change",
+      "Use $game-assets instead of placeholder art",
+      "Use $game-judge on the running game before calling it done"
+    ],
+    "brandColor": "#1F6F54"
+  }
+}

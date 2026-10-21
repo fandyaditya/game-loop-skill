@@ -1,6 +1,6 @@
 {
   "name": "game-loop",
-  "description": "Lightweight game-dev skill for Claude Code and Codex.",
+  "description": "Light game-dev plugin for Claude Code and Codex.",
   "owner": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
@@ -9,13 +9,13 @@
     {
       "name": "game-loop",
       "source": "./",
-      "description": "One playable change at a time, then a real playtest. For Claude Code and Codex.",
-      "version": "0.1.0",
+      "description": "Slice, assets, playtest judge, and rollback. The part of a game studio worth keeping on an 8 GB machine.",
+      "version": "0.2.0",
       "author": {
         "name": "fandyaditya"
       },
       "license": "MIT",
-      "keywords": ["game", "gamedev", "playtest"]
+      "keywords": ["game", "gamedev", "playtest", "assets"]
     }
   ]
 }
