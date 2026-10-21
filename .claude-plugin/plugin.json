@@ -1,0 +1,11 @@
+{
+  "name": "game-loop",
+  "description": "Incremental game builds, a playtest gate, and asset generation. Light enough for an 8 GB machine. Same skill for Claude Code and Codex.",
+  "version": "0.1.0",
+  "author": {
+    "name": "fandyaditya",
+    "url": "https://github.com/fandyaditya"
+  },
+  "license": "MIT",
+  "keywords": ["game", "gamedev", "playtest", "godot", "threejs"]
+}
