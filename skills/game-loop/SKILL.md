@@ -8,12 +8,12 @@ description: >-
 
 # Game loop
 
-This plugin replaces the heavy part of an AI game studio. Do the work with the four skills below. Do not invent a fifth process, a local model, or a preview app.
+Do the work with the four skills below. Do not invent a fifth process, a local model, or a preview app.
 
 Order for a normal turn:
 
 1. `$game-slice` decides the one playable change and edits only that.
-2. `$game-assets` if the player will see or hear something new.
+2. `$game-assets` if the player will see or hear something new. Assets are files in the project, not an API call.
 3. `$game-judge` on the running game. This is required before you say it works.
 4. `$game-rollback` only if the judge says the slice got worse.
 

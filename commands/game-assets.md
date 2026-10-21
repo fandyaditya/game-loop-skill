@@ -1,5 +1,5 @@
 ---
-description: Generate the art, model, or audio this slice needs through the game-loop MCP.
+description: Add the art or audio this slice needs as files in the project.
 ---
 
-Follow the game-assets skill. Use the game-loop MCP tools.
+Follow the game-assets skill. Do not call an external asset API.

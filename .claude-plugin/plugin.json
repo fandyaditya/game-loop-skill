@@ -1,8 +1,8 @@
 {
   "name": "game-loop",
   "displayName": "Game loop",
-  "version": "0.3.0",
-  "description": "The light 80% of an AI game studio. One playable slice, generated assets, a playtest judge, and rollback. No desktop app.",
+  "version": "0.4.0",
+  "description": "The light part of an AI game studio. One playable slice, project assets, a playtest judge, and rollback. No desktop app.",
   "author": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
@@ -13,6 +13,5 @@
   "keywords": ["game", "gamedev", "assets", "playtest"],
   "skills": "./skills/",
   "commands": "./commands/",
-  "hooks": "./hooks/hooks.json",
-  "mcpServers": "./.mcp.json"
+  "hooks": "./hooks/hooks.json"
 }

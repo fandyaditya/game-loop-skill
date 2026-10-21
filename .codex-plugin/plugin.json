@@ -1,7 +1,7 @@
 {
   "name": "game-loop",
-  "version": "0.3.0",
-  "description": "The light 80% of an AI game studio. One playable slice, generated assets, a playtest judge, and rollback. No desktop app.",
+  "version": "0.4.0",
+  "description": "The light part of an AI game studio. One playable slice, project assets, a playtest judge, and rollback. No desktop app.",
   "author": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
@@ -15,14 +15,14 @@
   "interface": {
     "displayName": "Game loop",
     "shortDescription": "Slice, assets, judge, rollback",
-    "longDescription": "Build a game one playable change at a time. The game-loop MCP server calls Genex for images, models, textures, audio, and characters. Judge the running game, and roll back only your own files if the slice got worse.",
+    "longDescription": "Build a game one playable change at a time. Use files already in the project for art and audio. Judge the running game, and roll back only your own files if the slice got worse.",
     "developerName": "fandyaditya",
     "category": "Coding",
     "capabilities": ["Interactive", "Write"],
     "websiteURL": "https://github.com/fandyaditya/game-loop-skill",
     "defaultPrompt": [
       "Use $game-slice to add one playable change",
-      "Use $game-assets instead of placeholder art",
+      "Use $game-assets for art that lives in the project",
       "Use $game-judge on the running game before calling it done"
     ],
     "brandColor": "#1F6F54"
