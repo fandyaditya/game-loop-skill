@@ -1,51 +1,53 @@
 # game-loop
 
-One plugin, two harnesses. Claude Code and Codex load the same skills, the same commands, and the same session hook.
+One plugin for Claude Code and Codex. Same skills, same commands, same hook, and an MCP server for assets.
 
 This is the part of a desktop AI game studio worth keeping, not the Electron app.
 
-| Studio piece | Skill and command |
+| Studio piece | Where |
 | --- | --- |
-| One playable change, then stop | `game-slice` |
-| Art, models, and audio instead of placeholders | `game-assets` |
-| Look at the running game before saying it works | `game-judge` |
-| Undo a slice that got worse, only your own files | `game-rollback` |
-| Which of those to run | `game-loop` |
+| One playable change, then stop | skill `game-slice` |
+| Art, models, and audio | skill `game-assets` plus the MCP below |
+| Look at the running game before saying it works | skill `game-judge` |
+| Undo a slice that got worse, only your own files | skill `game-rollback` |
 | Live preview app, agent swarms, local models | left out |
 
-Asset files still come from [Genex](https://genex.games/SKILL.md). This plugin tells the agent when to call it.
+## MCP
 
-## Claude Code
+Yes. The plugin includes one local MCP server, named `game-loop`. It does not generate assets itself. Each tool runs `npx genex` in the game project.
+
+| Tool | Genex lane |
+| --- | --- |
+| `doctor` | sign-in, credits, lanes |
+| `image` | picture, UI, sprite |
+| `model` | 3D |
+| `texture` | texture |
+| `sfx` | sound effect |
+| `music` | music |
+| `voice` | spoken line |
+| `character` | rigged character |
+| `wait` | wait for jobs |
+
+Pass `project` as the absolute path of the game folder. If Genex is not installed, `doctor` tells the agent to send the user here once: https://genex.games/SKILL.md
+
+- Codex reads [`mcp.json`](mcp.json) and starts `node ${PLUGIN_ROOT}/mcp/server.mjs`.
+- Claude Code reads [`.mcp.json`](.mcp.json) and [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json).
+
+## Install
+
+Claude Code:
 
 ```
 /plugin marketplace add fandyaditya/game-loop-skill
 /plugin install game-loop@game-loop
 ```
 
-Then `/game-slice`, `/game-assets`, `/game-judge`, `/game-rollback`, or `/game-loop`.
-
-Manifest: [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json). It points at `skills/`, `commands/`, and `hooks/hooks.json`.
-
-## Codex
+Codex:
 
 ```
 codex plugin add fandyaditya/game-loop-skill
 ```
 
-Then `$game-slice`, `$game-assets`, `$game-judge`, `$game-rollback`, or `$game-loop`.
+Slash commands in Claude: `/game-slice`, `/game-assets`, `/game-judge`, `/game-rollback`, `/game-loop`.
 
-Manifest: [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json). Same `skills/` and the same `hooks/hooks.json` as Claude Code.
-
-## Layout
-
-```
-.claude-plugin/plugin.json   Claude Code manifest
-.codex-plugin/plugin.json    Codex manifest
-hooks/hooks.json             shared session reminder
-commands/                    slash commands, one per skill
-skills/game-slice/
-skills/game-assets/
-skills/game-judge/
-skills/game-rollback/
-skills/game-loop/
-```
+The same names in Codex use `$`.

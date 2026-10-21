@@ -9,13 +9,13 @@
     {
       "name": "game-loop",
       "source": "./",
-      "description": "Slice, assets, playtest judge, and rollback. The part of a game studio worth keeping on an 8 GB machine.",
-      "version": "0.2.1",
+      "description": "Slice, assets, playtest judge, rollback, and a Genex MCP.",
+      "version": "0.3.0",
       "author": {
         "name": "fandyaditya"
       },
       "license": "MIT",
-      "keywords": ["game", "gamedev", "playtest", "assets"]
+      "keywords": ["game", "gamedev", "playtest", "assets", "mcp"]
     }
   ]
 }
