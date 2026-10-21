@@ -6,7 +6,7 @@
           {
             "type": "command",
             "command": "node -e \"process.exit(0)\"",
-            "statusMessage": "Game loop: one slice, then assets, judge, rollback if it got worse"
+            "statusMessage": "Game loop: pick 2D or 3D, one slice, then judge"
           }
         ]
       }

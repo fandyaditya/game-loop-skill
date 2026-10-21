@@ -1,7 +1,7 @@
 {
   "name": "game-loop",
-  "version": "0.4.0",
-  "description": "The light part of an AI game studio. One playable slice, project assets, a playtest judge, and rollback. No desktop app.",
+  "version": "0.5.0",
+  "description": "2D or 3D game loop. One playable slice, project assets, a playtest judge, and rollback.",
   "author": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
@@ -9,20 +9,20 @@
   "homepage": "https://github.com/fandyaditya/game-loop-skill",
   "repository": "https://github.com/fandyaditya/game-loop-skill",
   "license": "MIT",
-  "keywords": ["game", "gamedev", "assets", "playtest"],
+  "keywords": ["game", "gamedev", "2d", "3d", "playtest"],
   "skills": "./skills/",
   "hooks": "./hooks/hooks.json",
   "interface": {
     "displayName": "Game loop",
-    "shortDescription": "Slice, assets, judge, rollback",
-    "longDescription": "Build a game one playable change at a time. Use files already in the project for art and audio. Judge the running game, and roll back only your own files if the slice got worse.",
+    "shortDescription": "2D or 3D slice, judge, rollback",
+    "longDescription": "Pick 2D or 3D once. Build one playable change, use files already in the project, judge the running game, and roll back only your own files if the slice got worse.",
     "developerName": "fandyaditya",
     "category": "Coding",
     "capabilities": ["Interactive", "Write"],
     "websiteURL": "https://github.com/fandyaditya/game-loop-skill",
     "defaultPrompt": [
-      "Use $game-slice to add one playable change",
-      "Use $game-assets for art that lives in the project",
+      "Use $game-2d and add one playable change",
+      "Use $game-3d and add one playable change",
       "Use $game-judge on the running game before calling it done"
     ],
     "brandColor": "#1F6F54"
