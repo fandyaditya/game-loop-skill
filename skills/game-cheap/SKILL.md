@@ -20,13 +20,13 @@ One existing GLB. Three calls. Then stop.
 
 The cap is 100 credits, one dollar. The script refuses the next call when the ledger plus that call would pass 100.
 
-From the game folder, with `TRIPO_API_KEY` set and no more than $1 of credits on the account:
+Run it with the game folder as the working directory, so the GLB and the ledger stay in the game. Point `node` at this plugin's `scripts/cheap.mjs`.
 
 ```
-node scripts/cheap.mjs run path/to/mesh.glb
+TRIPO_API_KEY=... node scripts/cheap.mjs run path/to/mesh.glb
 ```
 
-Split runs before the rig. A split deletes any skeleton already on the mesh. The free check runs before the rig, and a mesh that fails it is not rigged.
+Put no more than $1 of credits on the Tripo account. Split runs before the rig, because a split deletes any skeleton already on the mesh. The free check runs before the rig, and a mesh that fails it is not rigged.
 
 Do not generate a mesh. Do not pass a v2 segment model. Do not batch clips. Do not buy a second dollar. Do not put the key in the repo. If the script says the cap is hit, stop and tell the user.
 

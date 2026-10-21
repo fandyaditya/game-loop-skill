@@ -1,7 +1,7 @@
 {
   "name": "game-loop",
-  "version": "0.5.0",
-  "description": "2D or 3D game loop. One playable slice, project assets, a playtest judge, and rollback.",
+  "version": "0.6.0",
+  "description": "2D or 3D game loop, plus one $1 pass that splits, rigs, and animates a GLB you already have.",
   "author": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
@@ -14,8 +14,8 @@
   "hooks": "./hooks/hooks.json",
   "interface": {
     "displayName": "Game loop",
-    "shortDescription": "2D or 3D slice, judge, rollback",
-    "longDescription": "Pick 2D or 3D once. Build one playable change, use files already in the project, judge the running game, and roll back only your own files if the slice got worse.",
+    "shortDescription": "2D or 3D, and a $1 rig pass",
+    "longDescription": "Pick 2D or 3D once. For a mesh you already have, one pass splits it, adds a skeleton, and applies one motion, then stops at $1.",
     "developerName": "fandyaditya",
     "category": "Coding",
     "capabilities": ["Interactive", "Write"],
@@ -23,7 +23,7 @@
     "defaultPrompt": [
       "Use $game-2d and add one playable change",
       "Use $game-3d and add one playable change",
-      "Use $game-judge on the running game before calling it done"
+      "Use $game-cheap on the GLB I already have"
     ],
     "brandColor": "#1F6F54"
   }

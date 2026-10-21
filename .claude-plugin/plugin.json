@@ -1,8 +1,8 @@
 {
   "name": "game-loop",
   "displayName": "Game loop",
-  "version": "0.5.0",
-  "description": "2D or 3D game loop. One playable slice, project assets, a playtest judge, and rollback.",
+  "version": "0.6.0",
+  "description": "2D or 3D game loop, plus one $1 pass that splits, rigs, and animates a GLB you already have.",
   "author": {
     "name": "fandyaditya",
     "url": "https://github.com/fandyaditya"
